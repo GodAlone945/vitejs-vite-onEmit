@@ -4,7 +4,7 @@ const Event = (function () {
     trigger,
     remove;
   listen = function (key, fn) {
-    console.log(this.clientList);
+    console.log(this);
     if (!clientList[key]) {
       clientList[key] = [];
     }
