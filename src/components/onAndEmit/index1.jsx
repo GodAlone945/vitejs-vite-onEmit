@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Test2 from './index2.jsx';
+import { connect } from 'react-redux';
 
-function Test1({}) {
+function Test1(props) {
+  console.log(props);
   const [num, setNum] = useState('XXXX-X-X');
   useEffect(() => {
     Event.listen('test1', (date) => {
@@ -17,4 +19,4 @@ function Test1({}) {
   );
 }
 
-export default Test1;
+export default connect(mapStateToProps, mapDispatchToProps)(Test1);

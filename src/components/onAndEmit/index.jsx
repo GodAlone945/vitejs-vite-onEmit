@@ -1,6 +1,7 @@
 import Event from '../../utils/event';
 import Test1 from './index1.jsx';
 import { useEffect, useState } from 'react';
+
 window.Event = Event;
 function onAndEmit() {
   const handleClick = () => {
