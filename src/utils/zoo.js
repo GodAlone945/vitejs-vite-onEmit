@@ -32,7 +32,7 @@ class Zoo {
     this.models[namespace] = modelObj;
 
     const newReducer = addNamespace(reducer, namespace);
-    this.reducers[namespace] = newReducer;
+    this.reducers[namespace] = reducer;
 
     this.effects[namespace] = effects;
   }
@@ -48,7 +48,7 @@ class Zoo {
       const currentReducer = this.reducers[namespace];
 
       if (currentReducer && currentReducer[type] && currentState) {
-        newState[namespace] = currentReducer[type](payload, currentState);
+        newState[namespace] = currentReducer[type](currentState, payload);
         newState = { ...newState };
       }
       return newState;

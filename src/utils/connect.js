@@ -9,8 +9,8 @@ export default (mapState, mapDispatch = {}, effectsArr = []) => {
     // 修改组件中的dispatch先触发effects中对应的方法，不存在时，作为正常的action dispatch
     const myDispatch = ({ type, payload }) => {
       const [typeId, typeName] = type.split('/');
-      const { effects } = zoo;
-
+      const { effects, store } = zoo;
+      const { dispatch } = store;
       if (effects[typeId] && effects[typeId][typeName]) {
         return effects[typeId][typeName](payload);
       }

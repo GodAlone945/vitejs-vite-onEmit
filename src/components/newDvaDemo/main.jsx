@@ -1,11 +1,11 @@
-import { connect } from '../../utils/zoo';
+import connect from '../../utils/zoo';
 
 const Test = (props) => {
   const { dispatch, testData } = props;
 
   const updateState = (field, value) => {
     dispatch({
-      type: 'zoo/updateState',
+      type: 'testDemo/updateState',
       payload: {
         [field]: value,
       },
@@ -19,4 +19,4 @@ const Test = (props) => {
   );
 };
 
-export default connect(({ zoo }) => ({ ...zoo }))(Test);
+export default connect(({ testDemo }) => ({ ...testDemo }))(Test);
