@@ -1,4 +1,6 @@
-import connect from '../../utils/zoo';
+import connect from '../../utils/connect.js';
+
+console.log(connect);
 
 const Test = (props) => {
   const { dispatch, testData } = props;

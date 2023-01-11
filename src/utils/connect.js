@@ -4,8 +4,6 @@ import zoo from './zoo';
 
 export default (mapState, mapDispatch = {}, effectsArr = []) => {
   return (Component) => {
-    const { getState, dispatch } = zoo.store;
-
     // 修改组件中的dispatch先触发effects中对应的方法，不存在时，作为正常的action dispatch
     const myDispatch = ({ type, payload }) => {
       const [typeId, typeName] = type.split('/');
@@ -35,7 +33,7 @@ export default (mapState, mapDispatch = {}, effectsArr = []) => {
           {...state}
           dispatch={myDispatch}
           {...effectsProps}
-        />
+        ></Component>
       );
     };
     return connect(mapState, mapDispatch)(NewComponent);

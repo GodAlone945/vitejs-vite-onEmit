@@ -1,5 +1,4 @@
 import { legacy_createStore } from 'redux';
-import { Provider } from 'react-redux';
 
 // 为effects或reducer添加namespace
 const addNamespace = (obj, name) => {
@@ -19,7 +18,7 @@ class Zoo {
     this.store = {};
   }
 
-  init(modals) {
+  init(models) {
     Object.values(models).forEach((item) => {
       this.model(item);
     });
@@ -55,7 +54,7 @@ class Zoo {
     };
 
     // 创建store
-    this.store = createStore(reducer);
+    this.store = legacy_createStore(reducer);
 
     const { dispatch, getState } = this.store;
 
