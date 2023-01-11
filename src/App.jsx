@@ -11,7 +11,7 @@ function App() {
       {/* <OnAndEmit /> */}
       {'.................'}
       {/* <OnAndEmit_1 /> */}
-      {/* <NewDvaDemo /> */}
+      <NewDvaDemo />
     </div>
   );
 }
