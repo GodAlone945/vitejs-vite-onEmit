@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Test2 from './index2.jsx';
-import { connect } from 'react-redux';
 
 function Test1(props) {
   console.log(props);
@@ -19,4 +18,4 @@ function Test1(props) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test1);
+export default Test1;

@@ -18,7 +18,7 @@ function onAndEmit() {
       <button onClick={handleClick}>给子组件传递值</button>
       <br />
       <button onClick={handleClick1}>给子组件传递值-1</button>
-      <Test1 />
+      {/* <Test1 /> */}
     </div>
   );
 }
